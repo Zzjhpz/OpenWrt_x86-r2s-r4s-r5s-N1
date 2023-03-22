@@ -105,7 +105,7 @@ jobs:
         gitdate=$(date -d "$gitdate" +%s)
         now=$(date -d "$(date)" +%s)
         if [[ $(expr $gitdate + 300) < $now ]]; then
-          curl -X POST https://api.github.com/repos/Kiddin9/openwrt-packages/dispatches \
+          curl -X POST https://api.github.com/repos/kiddin9/openwrt-packages/dispatches \
             -H "Accept: application/vnd.github.everest-preview+json" \
             -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
           --data '{"event_type": "update"}'
