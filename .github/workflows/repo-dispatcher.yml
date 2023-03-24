@@ -63,7 +63,8 @@ jobs:
     - name: Trigger Compile
       run: |
         sudo timedatectl set-timezone "$TZ"
-          curl -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
+          curl \
+          -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
           -H "Accept: application/vnd.github.everest-preview+json" \
           -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
-          -d '{"event_type": "ipq807x_generic ${{ github.event.inputs.param }}", "client_payload": {"target": "ipq807x_generic"}}'
+          -d '{"event_type": "mediatek_mt7986 ${{ github.event.inputs.param }}", "client_payload": {"target": "mediatek_mt7986"}}'
